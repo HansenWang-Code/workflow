@@ -1,0 +1,24 @@
+name: Download FSQ OS Places
+
+on:
+  workflow_dispatch:
+
+jobs:
+  download-fsq:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -U datasets huggingface_hub pyarrow
+
+      - name: Download places/train
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python scripts/download_fsq.py
