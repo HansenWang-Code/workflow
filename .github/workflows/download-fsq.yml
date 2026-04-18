@@ -1,0 +1,25 @@
+name: Download FSQ dataset
+
+on:
+  workflow_dispatch:
+
+jobs:
+  download:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure Git Xet
+        run: |
+          git xet install
+          git lfs install
+
+      - name: Login to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          hf auth login --token "$HF_TOKEN"
+
+      - name: Clone gated dataset
+        run: |
+          git clone https://huggingface.co/datasets/foursquare/fsq-os-places
