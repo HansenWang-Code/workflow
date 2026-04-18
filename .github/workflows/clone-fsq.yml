@@ -1,0 +1,30 @@
+name: Clone FSQ with Git Xet
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clone:
+    runs-on: [self-hosted, Windows, X64]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check tools
+        shell: pwsh
+        run: |
+          git --version
+          git xet version
+          hf --version
+
+      - name: Login to Hugging Face
+        shell: pwsh
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          hf auth login --token $env:HF_TOKEN
+
+      - name: Clone dataset
+        shell: pwsh
+        run: |
+          git clone https://huggingface.co/datasets/foursquare/fsq-os-places
