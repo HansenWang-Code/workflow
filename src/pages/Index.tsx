@@ -131,10 +131,11 @@ const Index = () => {
     setShowHero(true);
   };
 
-  const navFooter = (canNext: boolean, onNext: () => void) => (
+  // take on-block
+  const navFooter = (canNext: boolean, onNext: () => void, onBack?: () => void) => (
     <>
       <button
-        onClick={() => setStep((s) => Math.max(1, s - 1))}
+        onClick={onBack ?? (() => setStep((s) => s - 1))}
         className="font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-ink transition-colors"
       >
         ← Back
@@ -176,7 +177,7 @@ const Index = () => {
             eyebrow="Choose your category"
             title="What kind of business are you opening?"
             description="Pick the broad category. We'll ask for the specifics next — the more precise you are, the sharper the verdict."
-            footer={navFooter(!!category, () => setStep(2))}
+            footer={navFooter(!!category, () => setStep(2), () => setShowHero(true))}
           >
             <Step1Category selected={category} onSelect={setCategory} />
           </StepShell>
