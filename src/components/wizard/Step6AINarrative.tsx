@@ -91,7 +91,7 @@ export const Step6AINarrative = ({
             </div>
             <div>
               <div className="font-display font-semibold text-sm text-ink">
-                SPOTIGY · AI Recommendation
+                LOCWISE · AI Recommendation
               </div>
               <div className="data-tag">Plain-English verdict for {cityLabel}</div>
             </div>
