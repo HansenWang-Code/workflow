@@ -33,10 +33,7 @@ export interface MarketSnapshot {
   neighborCounts: Record<string, number>;
 }
 
-const CATEGORY_BASE: Record<
-  BusinessCategory,
-  { rent: [number, number]; success: [number, number]; revenue: [number, number] }
-> = {
+const CATEGORY_BASE = {
   restaurant: { rent: [38, 110], success: [42, 68], revenue: [42000, 138000] },
   cafe:       { rent: [32, 95],  success: [48, 72], revenue: [22000, 78000] },
   gym:        { rent: [22, 60],  success: [55, 78], revenue: [28000, 92000] },

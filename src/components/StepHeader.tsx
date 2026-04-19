@@ -21,7 +21,7 @@ export const StepHeader = ({ steps, current }: StepHeaderProps) => {
             </div>
             <div>
               <div className="font-display font-bold text-base leading-none tracking-tight">
-                SPOTIGY
+                LOCWISE
               </div>
               <div className="data-tag mt-0.5">LOCATION DECISION ENGINE</div>
             </div>

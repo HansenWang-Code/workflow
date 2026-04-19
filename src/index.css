@@ -4,10 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ============================================
-   SITE INTEL — Cartographic Field Research
-   Design system. HSL only. Semantic tokens.
-   ============================================ */
 
 @layer base {
   :root {

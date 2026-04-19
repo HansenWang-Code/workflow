@@ -27,7 +27,7 @@ const Hero = ({ onStart }: { onStart: () => void }) => (
     <div className="container relative py-20 md:py-28">
       <div className="max-w-4xl">
         <div className="flex items-center gap-3 mb-6">
-          <span className="stamp text-ink">◎ SPOTIGY · V0.1</span>
+          <span className="stamp text-ink">◎ LOCWISE · V0.1</span>
           <span className="data-tag">Location decision engine</span>
         </div>
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-ink leading-[0.95]">
@@ -155,7 +155,7 @@ const Index = () => {
         <StepHeader steps={STEPS} current={0} />
         <Hero onStart={() => setShowHero(false)} />
         <footer className="container py-10 flex items-center justify-between border-t border-border">
-          <div className="data-tag">© SPOTIGY · FIELD EDITION</div>
+          <div className="data-tag">© LOCWISE</div>
           <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
             Mock dataset · v0.1
           </div>
@@ -228,7 +228,7 @@ const Index = () => {
             key="s5"
             stepNumber={5}
             totalSteps={6}
-            eyebrow="SPOTIGY"
+            eyebrow="LOCWISE"
             title="The numbers, the signals, the matrix."
             description="Live market data, demographic profile, and the conflict matrix scored against your specific concept."
             footer={navFooter(true, () => setStep(6))}
@@ -264,7 +264,7 @@ const Index = () => {
       </AnimatePresence>
 
       <footer className="container py-10 flex items-center justify-between border-t border-border mt-8">
-        <div className="data-tag">© SPOTIGY · FIELD EDITION</div>
+        <div className="data-tag">© LOCWISE · FIELD EDITION</div>
         <div className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
           Mock dataset · v0.1
         </div>
