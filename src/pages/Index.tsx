@@ -115,12 +115,11 @@ const Index = () => {
     [pin, category, subtype]
   );
 
-  const handleCityConfirm = (label: string) => {
-    setCityLabel(label);
-    const preset = PRESET_CITIES.find((p) => p.label === label);
-    if (preset) setCenter({ lat: preset.lat, lng: preset.lng });
-    setStep(4);
-  };
+  const handleCityConfirm = (label: string, lat: number, lng: number) => {
+  setCityLabel(label);
+  setCenter({ lat, lng }); // lat / lang can be use form geocode
+  setStep(4);
+};
 
   const handleRestart = () => {
     setStep(1);
@@ -204,7 +203,7 @@ const Index = () => {
             stepNumber={3}
             totalSteps={6}
             eyebrow="Pick a market"
-            title="Which city are you scouting?"
+            title="Which spot are you searching?"
             description="Search for any city or address worldwide. You'll drop a precise pin on the map next."
             footer={navFooter(false, () => {}, () => setStep(2))}
           >
