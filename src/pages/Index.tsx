@@ -197,6 +197,7 @@ const Index = () => {
           </StepShell>
         )}
 
+                // เพิ่ม footer เข้าไป
         {step === 3 && (
           <StepShell
             key="s3"
@@ -205,6 +206,7 @@ const Index = () => {
             eyebrow="Pick a market"
             title="Which city are you scouting?"
             description="Search for any city or address worldwide. You'll drop a precise pin on the map next."
+            footer={navFooter(false, () => {}, () => setStep(2))}
           >
             <Step3City defaultCity={cityLabel} onConfirm={handleCityConfirm} />
           </StepShell>
